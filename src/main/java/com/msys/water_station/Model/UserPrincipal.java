@@ -20,6 +20,7 @@ public class UserPrincipal implements UserDetails {
         System.out.println("RAW ROLE FROM DB = [" + roleName + "]");
         return Collections.singleton(
                 new SimpleGrantedAuthority("ROLE_" + roleName));
+
     }
 
     @Override

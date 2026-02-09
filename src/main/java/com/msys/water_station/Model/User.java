@@ -24,23 +24,19 @@ public class User {
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
     @Column(name = "full_name", nullable = false, unique = true)
-    private String name;
+    private String fullname;
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;
     @Column(name = "password", nullable = false, unique = true)
     private String password;
 
-    @Column(name = "fullname", nullable = false, unique = true)
-    private String fullname;
-
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "active", nullable = false)
     private boolean active;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
