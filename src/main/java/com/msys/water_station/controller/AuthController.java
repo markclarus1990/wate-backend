@@ -15,7 +15,7 @@ import com.msys.water_station.service.AuthService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("auth")
+@RequestMapping("/api/auth")
 public class AuthController {
 
     @Autowired

@@ -6,5 +6,7 @@ import com.msys.water_station.Model.User;
 import java.util.List;
 
 public interface UserRepo extends JpaRepository<User, Long> {
+    List<User> findByUsernameContainingIgnoreCase(String username);
+
     User findByUsername(String username);
 }

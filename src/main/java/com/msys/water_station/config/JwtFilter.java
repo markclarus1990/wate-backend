@@ -40,7 +40,7 @@ public class JwtFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
             return;
         }
-
+        // =====================================================================================
         String authHeader = request.getHeader("Authorization");
         System.out.println("JWT FILTER → Authorization header: " + authHeader);
 

@@ -15,13 +15,22 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(RoleNotAllowedException.class)
-    public ResponseEntity<?> handleRoleNotAllowedException(RoleNotAllowedException ex) {
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<?> handleUserNotFound(UserNotFoundException ex) {
         ErrorResponse errorResponse = new ErrorResponse(
                 java.time.LocalDateTime.now(),
-                ex.getMessage(),
-                "The specified role is not allowed.");
-        return ResponseEntity.status(403).body(errorResponse);
+                "User Not Found",
+                ex.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(UsersNotFoundException.class)
+    public ResponseEntity<?> handleUsersNotFound(UsersNotFoundException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                java.time.LocalDateTime.now(),
+                "Users Not Found",
+                ex.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
