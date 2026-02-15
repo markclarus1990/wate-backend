@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS movement_type;
+CREATE TABLE movement_type (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL
+   
+
+);
