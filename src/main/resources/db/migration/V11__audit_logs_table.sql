@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS audit_logs;
+
+CREATE TABLE audit_logs (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(100) NOT NULL,
+    role VARCHAR(100) NOT NULL,
+    method VARCHAR(10) NOT NULL,
+    endpoint VARCHAR(500) NOT NULL,
+    ip_address VARCHAR(100),
+    status INT NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

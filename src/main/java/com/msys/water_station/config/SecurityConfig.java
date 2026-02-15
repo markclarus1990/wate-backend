@@ -31,13 +31,18 @@ import com.msys.water_station.service.MyUserDetailService;
 public class SecurityConfig {
     @Autowired
     private JwtAccessDeniedHandler jwtAccessDeniedHandler;
+
     @Autowired
     private JwtAuthEntryPoint jwtAuthEntryPoint;
+
     @Autowired
     private JwtFilter jwtFilter;
 
     @Autowired
     private MyUserDetailService myUserDetailService;
+
+    @Autowired
+    AuditLoggingFilter auditLoggingFilter;
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -62,7 +67,8 @@ public class SecurityConfig {
 
                         .requestMatchers("/api/users/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterAfter(auditLoggingFilter, JwtFilter.class);
 
         return http.build();
     }
