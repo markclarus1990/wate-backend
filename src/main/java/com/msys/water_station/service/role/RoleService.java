@@ -1,4 +1,4 @@
-package com.msys.water_station.service;
+package com.msys.water_station.service.role;
 
 import org.springframework.stereotype.Service;
 

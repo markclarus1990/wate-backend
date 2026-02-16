@@ -1,4 +1,4 @@
-package com.msys.water_station.service;
+package com.msys.water_station.service.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,6 +14,7 @@ import com.msys.water_station.dto.user.Register;
 import com.msys.water_station.dto.user.UserResponse;
 import com.msys.water_station.repo.RoleRepo;
 import com.msys.water_station.repo.UserRepo;
+import com.msys.water_station.service.jwt.JwtService;
 import com.msys.water_station.util.UserMapper;
 
 @Service

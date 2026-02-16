@@ -1,4 +1,4 @@
-package com.msys.water_station.service;
+package com.msys.water_station.service.user;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import com.msys.water_station.dto.user.UserResponse;
 import com.msys.water_station.exceptions.UserNotFoundException;
 import com.msys.water_station.exceptions.UsersNotFoundException;
 import com.msys.water_station.repo.UserRepo;
+import com.msys.water_station.service.jwt.JwtService;
 import com.msys.water_station.util.UserMapper;
 import jakarta.transaction.Transactional;
 

@@ -1,4 +1,4 @@
-package com.msys.water_station.service;
+package com.msys.water_station.service.jwt;
 
 import java.util.Date;
 import java.util.HashMap;

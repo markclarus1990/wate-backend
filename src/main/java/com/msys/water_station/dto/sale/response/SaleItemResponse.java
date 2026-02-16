@@ -1,4 +1,4 @@
-package com.msys.water_station.dto.sale;
+package com.msys.water_station.dto.sale.response;
 
 import java.math.BigDecimal;
 

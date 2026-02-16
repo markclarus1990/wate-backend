@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.msys.water_station.Model.User;
 import com.msys.water_station.dto.user.Register;
 import com.msys.water_station.dto.user.UserResponse;
-import com.msys.water_station.service.AuthService;
+import com.msys.water_station.service.auth.AuthService;
 
 import jakarta.validation.Valid;
 

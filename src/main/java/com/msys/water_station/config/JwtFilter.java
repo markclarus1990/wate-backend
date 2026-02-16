@@ -11,8 +11,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.msys.water_station.service.JwtService;
-import com.msys.water_station.service.MyUserDetailService;
+import com.msys.water_station.service.jwt.JwtService;
+import com.msys.water_station.service.user.MyUserDetailService;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import com.msys.water_station.Model.SaleItem;
-import com.msys.water_station.dto.sale.SaleItemResponse;
+import com.msys.water_station.dto.sale.response.SaleItemResponse;
 
 @Mapper(componentModel = "spring")
 public interface SaleItemMapper {
