@@ -25,39 +25,35 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "inventory_items")
-public class InventoryItems {
+public class InventoryItem {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, unique = true)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(nullable = false)
     private String name;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "unit")
     private String unit;
 
-    @Column(name = "current_stock")
+    @Column(name = "current_stock", nullable = false)
     private BigDecimal currentStock;
 
     @Column(name = "reorder_level")
     private BigDecimal reorderLevel;
 
-    @Column(name = "active", nullable = false)
+    @Column(nullable = false)
     private Boolean active;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
     @CreationTimestamp
+    @Column(updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    @OneToMany(mappedBy = "inventoryItems")
+    @OneToMany(mappedBy = "inventoryItem")
     private java.util.List<Price> prices;
-
 }

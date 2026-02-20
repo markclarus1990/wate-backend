@@ -11,6 +11,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.msys.water_station.exceptions.InvalidTokenException;
 import com.msys.water_station.service.jwt.JwtService;
 import com.msys.water_station.service.user.MyUserDetailService;
 
@@ -76,6 +77,8 @@ public class JwtFilter extends OncePerRequestFilter {
 
                 SecurityContextHolder.getContext().setAuthentication(authToken);
                 System.out.println("JWT FILTER → SecurityContext populated for user: " + username);
+            } else {
+                throw new InvalidTokenException("invalid TKENZ");
             }
         }
 

@@ -14,6 +14,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+    @ExceptionHandler(InvalidTokenException.class)
+    public ResponseEntity<?> handleInvalidToken(InvalidTokenException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                java.time.LocalDateTime.now(),
+                "Invalid Token",
+                ex.getMessage());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
 
     @ExceptionHandler(CustomerNotFoundException.class)
     public ResponseEntity<?> handleCustomerNotFound(CustomerNotFoundException ex) {

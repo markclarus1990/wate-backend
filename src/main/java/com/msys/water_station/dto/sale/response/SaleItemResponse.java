@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SaleItemResponse {
     private Long id;
-    private BigDecimal quantity;
+    private Integer quantity;
     private BigDecimal unitPrice;
     private BigDecimal subTotal;
     private String itemName;

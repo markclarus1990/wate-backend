@@ -9,6 +9,6 @@ import com.msys.water_station.dto.sale.response.SaleItemResponse;
 @Mapper(componentModel = "spring")
 public interface SaleItemMapper {
 
-    @Mapping(target = "itemName", source = "inventoryItems.name")
+    @Mapping(target = "itemName", source = "inventoryItem.name")
     SaleItemResponse toDTO(SaleItem saleItem);
 }

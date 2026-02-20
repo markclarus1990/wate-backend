@@ -1,5 +1,6 @@
 package com.msys.water_station.Model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -33,7 +34,7 @@ public class Price {
     private Long id;
 
     @Column(name = "price", nullable = false)
-    private Double price;
+    private BigDecimal price;
 
     @Column(name = "effective_from", nullable = false)
     private LocalDateTime effectiveFrom;
@@ -52,7 +53,7 @@ public class Price {
     // JOIN COLUMNS
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "inventory_item_id", nullable = false)
-    private InventoryItems inventoryItems;
+    private InventoryItem inventoryItem;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "created_by", nullable = false)

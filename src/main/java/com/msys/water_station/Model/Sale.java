@@ -2,10 +2,12 @@ package com.msys.water_station.Model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -60,7 +62,6 @@ public class Sale {
     @JoinColumn(name = "created_by", nullable = false)
     private User user;
 
-    @OneToMany(mappedBy = "sale", fetch = FetchType.LAZY)
-    private java.util.List<SaleItem> saleItems;
-
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+    private List<SaleItem> saleItems;
 }
